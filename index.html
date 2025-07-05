@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peel Thunder Resource Finder</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+<link rel="icon" href="image.png" type="image/png" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="image.png" alt="Peel Thunder Logo" />
+      <span>Peel Thunder Resource Finder</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="library.html">Resource Library</a></li>
+    </ul>
+  </nav>
+
+  <main class="home">
+    <h1>Welcome to the Peel Thunder Resource Finder</h1>
+    <p>Scan a QR code to get item information instantly.</p>
+
+    <!-- QR Code Scanner Section -->
+<div class="scanner-container">
+  <div id="qr-reader" style="width: 300px;"></div>
+  <div id="no-camera" class="no-camera" style="display: none;">
+    No camera found
+  </div>
+</div>
+
+<!-- QR Code Scanner Script -->
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script>
+  const qrReader = document.getElementById("qr-reader");
+  const noCameraBox = document.getElementById("no-camera");
+
+  Html5Qrcode.getCameras().then(cameras => {
+    if (cameras && cameras.length) {
+      const cameraId = cameras[0].id;
+      const qrScanner = new Html5Qrcode("qr-reader");
+      qrScanner.start(
+        cameraId,
+        { fps: 10, qrbox: 250 },
+        (decodedText, decodedResult) => {
+          console.log(`QR Code detected: ${decodedText}`);
+          window.location.href = decodedText; // Redirect to scanned link
+        },
+        errorMessage => {
+          // Optionally log scan errors
+        }
+      );
+    } else {
+      // No cameras found
+      qrReader.style.display = "none";
+      noCameraBox.style.display = "block";
+    }
+  }).catch(err => {
+    // If getCameras fails
+    qrReader.style.display = "none";
+    noCameraBox.style.display = "block";
+  });
+</script>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Chewy', cursive;
+  background-color: #0a293f;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #07314d;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 45px;
+  width: 45px;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* Home Page Content */
+.home {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.home h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.scanner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.no-camera {
+  background-color: #189481;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.library {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.library h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.price-table {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #07314d;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.price-table th,
+.price-table td {
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: white;
+  border-bottom: 1px solid #0a293f;
+}
+
+.price-table th {
+  background-color: #189481;
+}
+
+.price-table tr:last-child td {
+  border-bottom: none;
+}
+
+.price-table td {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.see-more {
+  color: #189481;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.see-more:hover {
+  color: #0fb199;
+}
+
+.item-page {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.item-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.item-price {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #189481;
+}
+
+.item-desc {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.back-link {
+  color: #fff;
+  background-color: #189481;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #117569;
+}
+
